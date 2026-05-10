@@ -1,0 +1,52 @@
+graph {
+edge[style="solid"]; node[shape="plaintext"]; 
+subgraph {rank=same;
+  n6[label="Phrase"]; 
+}
+ 
+subgraph {rank=same;
+  n3[label="Item"]; 
+  n5[label="Quality"]; 
+  edge[style="invis"]; 
+  n3  --  n5 ;
+}
+n6 -- n3;
+n6 -- n5;
+ 
+subgraph {rank=same;
+  n2[label="Kind"]; 
+  n4[label="Quality"]; 
+  edge[style="invis"]; 
+  n2  --  n4 ;
+}
+n3 -- n2;
+n5 -- n4;
+ 
+subgraph {rank=same;
+  n0[label="Quality"]; 
+  n1[label="Kind"]; 
+  edge[style="invis"]; 
+  n0  --  n1 ;
+}
+n2 -- n0;
+n2 -- n1;
+ 
+edge[style="dashed"]; node[shape="plaintext"]; 
+subgraph {rank=same;
+  n100000[label="this"]; 
+  n100001[label="delicious"]; 
+  n100002[label="cheese"]; 
+  n100003[label="is"]; 
+  n100004[label="very"]; 
+  n100005[label="Italian"]; 
+  edge[style="invis"]; 
+  n100000  --  n100001  --  n100002  --  n100003  --  n100004  --  n100005 ;
+}
+n3 -- n100000;
+n0 -- n100001;
+n1 -- n100002;
+n6 -- n100003;
+n5 -- n100004;
+n4 -- n100005;
+ 
+}
